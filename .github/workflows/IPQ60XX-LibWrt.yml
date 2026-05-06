@@ -5,6 +5,12 @@ on:
   workflow_call:
   # schedule:
   #   - cron: 0 20 * * *
+ 
+  # 👇 关键：声明权限
+permissions:
+  contents: write   # 允许创建 Release、上传资产
+  actions: read
+  metadata: read
 
 env:
   REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
